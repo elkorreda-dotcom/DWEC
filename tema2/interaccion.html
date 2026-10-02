@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Interacción con JavaScript - Reda EL Qourchi</title>
+
+    <!-- CSS de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Iconos de Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+    <!-- Tu CSS -->
+    <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar común -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                Reda EL Qourchi
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link" href="index.html">Parte A: Navegadores</a>
+                <a class="nav-link active" href="interaccion.html">Parte B: Interacción</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Panel de Control e Interacción con JavaScript</h1>
+
+        <!-- Card de Bootstrap agrupando los botones (requisito de la Parte B) -->
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="card shadow">
+                    <div class="card-header bg-primary text-white">
+                        <h5 class="mb-0">Ejecución de Funciones en app.js</h5>
+                    </div>
+                    <div class="card-body text-center">
+                        <p class="text-muted mb-4">Haz clic en los botones para disparar las funciones y revisa la consola del navegador (F12) para ver las trazas.</p>
+                        
+                        <div class="d-grid gap-3 col-sm-8 mx-auto">
+                            <!-- Botón A: Saludar -->
+                            <button type="button" class="btn btn-outline-primary btn-lg" onclick="saludar()">Saludar</button>
+                            <!-- Botón B: Simular un error -->
+                            <button type="button" class="btn btn-outline-danger btn-lg" onclick="simularError()">Simular un error</button>
+                            <!-- Botón C: ¿Qué navegador soy? -->
+                            <button type="button" class="btn btn-outline-success btn-lg" onclick="queNavegadorSoy()">¿Qué navegador soy?</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS de Bootstrap y script externo obligatorio al final del body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>

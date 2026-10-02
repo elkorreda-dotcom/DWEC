@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Navegadores y Motores - Reda EL Qourchi</title>
+
+  <!-- CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tu CSS, SIEMPRE después del de Bootstrap -->
+  <link href="css/estilos.css" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navbar común con tu nombre -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <!-- Si quieres añadir el logo en la navbar, puedes usar una etiqueta <img> aquí -->
+            <a class="navbar-brand" href="#">
+                <img src="logo.png" alt="Logo" width="30" height="30" class="d-inline-block align-text-top me-2">
+                Reda EL Qourchi
+            </a>
+            <div class="navbar-nav">
+                <a class="nav-link active" href="index.html">Parte A: Navegadores</a>
+                <a class="nav-link" href="interaccion.html">Parte B: Interacción</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <h1 class="mb-4">Tabla de Navegadores y Motores</h1>
+
+        <!-- Tabla de navegadores corregida -->
+        <div class="table-responsive mb-4">
+            <table class="table table-striped table-bordered">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Navegador</th>
+                        <th>Empresa</th>
+                        <th>Motor de Renderizado</th>
+                        <th>Motor de JavaScript</th>
+                        <th>Chromium</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Google Chrome</td>
+                        <td>Google</td>
+                        <td>Blink</td>
+                        <td>V8</td>
+                        <td>Sí</td>
+                    </tr>
+                    <tr>
+                        <td>Mozilla Firefox</td>
+                        <td>Mozilla</td>
+                        <td>Gecko</td>
+                        <td>SpiderMonkey</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Apple Safari</td>
+                        <td>Apple</td>
+                        <td>WebKit</td>
+                        <td>JavaScriptCore</td>
+                        <td>No</td>
+                    </tr>
+                    <tr>
+                        <td>Microsoft Edge</td>
+                        <td>Microsoft</td>
+                        <td>Blink</td>
+                        <td>V8</td>
+                        <td>Sí</td>
+                    </tr>
+                    <tr>
+                        <td>Opera</td>
+                        <td>Opera Software</td>
+                        <td>Blink</td>
+                        <td>V8</td>
+                        <td>Sí</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 2. Texto propio explicativo -->
+        <section class="mb-5">
+            <h3>Evolución y unificación de motores</h3>
+            <p>En la actualidad, la mayoría de los navegadores utilizan el motor Blink de Chromium. Esto unifica criterios de diseño y facilita el desarrollo web, aunque reduce la variedad de motores independientes. Fuera de este ecosistema se mantienen Firefox con Gecko y Safari con WebKit.</p>
+        </section>
+
+        <!-- 3. Card con ejemplo de Can I Use -->
+        <div class="card mb-5">
+            <div class="card-header bg-secondary text-white">Ejemplo de Compatibilidad (Can I Use)</div>
+            <div class="card-body">
+                <h5 class="card-title">Característica analizada: CSS Subgrid</h5>
+                <p class="card-text">Permite que las cuadrículas anidadas compartan las pistas principales. Presentó limitaciones de soporte en versiones anteriores de Safari.</p>
+                <p class="text-muted mb-2"><strong>Fecha de consulta:</strong> 1 de octubre de 2026</p>
+                <a href="https://caniuse.com/css-subgrid" target="_blank" class="btn btn-primary">Ver en Can I Use</a>
+            </div>
+        </div>
+
+        <!-- 4. Reflexión final -->
+        <section class="mb-5">
+            <h3>Reflexión de pruebas</h3>
+            <p>Para cualquier encargo profesional, probaría primero en Chrome y Edge por su cuota de mercado, y obligatoriamente en Safari para comprobar el correcto funcionamiento en dispositivos móviles y sistemas de Apple.</p>
+        </section>
+    </div>
+
+    <!-- JS de Bootstrap al final del body -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
