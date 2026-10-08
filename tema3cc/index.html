@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Variables, tipos y conversiones - Reda ELQourchi</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body class="bg-light">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1">DWEC - Tema 3: Cuaderno de Laboratorio</span>
+            <span class="text-white">Alumno: Reda ELQourchi</span>
+        </div>
+    </nav>
+
+    <!-- Cabecera -->
+    <header class="container my-4 text-center">
+        <h1 class="display-5 fw-bold">Variables, tipos y conversiones</h1>
+        <p class="lead text-muted">Práctica de JavaScript: predicción, tipos, conversiones y coerción.</p>
+    </header>
+
+    <main class="container mb-5">
+
+        <!-- EJERCICIO 1 -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Ejercicio 1: Variables y typeof</h2>
+            </div>
+            <div class="card-body">
+                <p>Declaración de variables de distintos tipos, uso de <code>const</code> y <code>let</code>, y comprobación con <code>typeof</code>.</p>
+                
+                <h3 class="h6 text-secondary">Código ejecutado:</h3>
+                <pre class="bg-dark text-light p-3 rounded"><code>const edad = 20;
+const nombreUsuario = "Elena";
+const esEstudiante = true;
+const datoNulo = null;
+let variableIndefinida;
+const numeroGrande = 10n;
+let ciudad;
+ciudad = "Madrid";
+
+console.log(edad, typeof edad);
+// ... (ver app.js para el resto)</code></pre>
+
+                <h3 class="h6 text-secondary mt-3">Predicción y Resultados:</h3>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Variable / Expresión</th>
+                            <th>Valor</th>
+                            <th>TypeOf Espero</th>
+                            <th>TypeOf Sale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>edad</td>
+                            <td>20</td>
+                            <td>number</td>
+                            <td>number</td>
+                        </tr>
+                        <tr>
+                            <td>nombreUsuario</td>
+                            <td>"Elena"</td>
+                            <td>string</td>
+                            <td>string</td>
+                        </tr>
+                        <tr>
+                            <td>esEstudiante</td>
+                            <td>true</td>
+                            <td>boolean</td>
+                            <td>boolean</td>
+                        </tr>
+                        <tr>
+                            <td>datoNulo</td>
+                            <td>null</td>
+                            <td>object</td>
+                            <td>object</td>
+                        </tr>
+                        <tr>
+                            <td>variableIndefinida</td>
+                            <td>undefined</td>
+                            <td>undefined</td>
+                            <td>undefined</td>
+                        </tr>
+                        <tr>
+                            <td>numeroGrande</td>
+                            <td>10n</td>
+                            <td>bigint</td>
+                            <td>bigint</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="small text-muted"><strong>Nota sobre null:</strong> <code>typeof null</code> devuelve "object" debido a un error histórico de las primeras versiones de JavaScript que se ha mantenido por compatibilidad.</p>
+
+                <button class="btn btn-primary mt-2" onclick="ejercicio1()">Ejecutar Ejercicio 1</button>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 2 -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Ejercicio 2: Conversiones explícitas</h2>
+            </div>
+            <div class="card-body">
+                <p>Conversiones utilizando <code>Number()</code>, <code>String()</code> y <code>Boolean()</code>.</p>
+                
+                <h3 class="h6 text-secondary">Código ejecutado:</h3>
+                <pre class="bg-dark text-light p-3 rounded"><code>String(123);
+Number("123");
+Number("12abc");
+Number("");
+Number(true);
+Boolean(0);
+Boolean("texto");
+Boolean("");</code></pre>
+
+                <h3 class="h6 text-secondary mt-3">Tabla Conversión / Espero / Sale:</h3>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Conversión</th>
+                            <th>Espero</th>
+                            <th>Sale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>String(123)</td>
+                            <td>"123"</td>
+                            <td>"123"</td>
+                        </tr>
+                        <tr>
+                            <td>Number("123")</td>
+                            <td>123</td>
+                            <td>123</td>
+                        </tr>
+                        <tr>
+                            <td>Number("12abc")</td>
+                            <td>NaN</td>
+                            <td>NaN</td>
+                        </tr>
+                        <tr>
+                            <td>Number("")</td>
+                            <td>0</td>
+                            <td>0</td>
+                        </tr>
+                        <tr>
+                            <td>Number(true)</td>
+                            <td>1</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>Boolean(0)</td>
+                            <td>false</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>Boolean("texto")</td>
+                            <td>true</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>Boolean("")</td>
+                            <td>false</td>
+                            <td>false</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <button class="btn btn-primary mt-2" onclick="ejercicio2()">Ejecutar Ejercicio 2</button>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 3 -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Ejercicio 3: Coerción y comparaciones</h2>
+            </div>
+            <div class="card-body">
+                <p>Evaluación de expresiones mixtas y comparaciones estrictas (<code>===</code>) frente a débiles (<code>==</code>).</p>
+                
+                <h3 class="h6 text-secondary">Código ejecutado:</h3>
+                <pre class="bg-dark text-light p-3 rounded"><code>"5" - 2;
+"5" + 2;
+"10" * "2";
+true + 1;
+null + 5;
+undefined + 1;
+5 == '5'; 5 === '5';
+0 == false; 0 === false;
+null == undefined; null === undefined;</code></pre>
+
+                <h3 class="h6 text-secondary mt-3">Tabla Expresión / Espero / Sale:</h3>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Expresión</th>
+                            <th>Espero</th>
+                            <th>Sale</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>"5" - 2</td>
+                            <td>3</td>
+                            <td>3</td>
+                        </tr>
+                        <tr>
+                            <td>"5" + 2</td>
+                            <td>"52"</td>
+                            <td>"52"</td>
+                        </tr>
+                        <tr>
+                            <td>5 == '5'</td>
+                            <td>true</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>5 === '5'</td>
+                            <td>false</td>
+                            <td>false</td>
+                        </tr>
+                        <tr>
+                            <td>null == undefined</td>
+                            <td>true</td>
+                            <td>true</td>
+                        </tr>
+                        <tr>
+                            <td>null === undefined</td>
+                            <td>false</td>
+                            <td>false</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <p class="mt-2"><strong>Explicación de la coerción:</strong> En las operaciones aritméticas (como <code>-</code>, <code>*</code>), JavaScript fuerza la conversión hacia número mandando el valor numérico. Sin embargo, en el operador <code>+</code>, si uno de los operandos es una cadena (string), manda la cadena y se realiza una concatenación de texto.</p>
+
+                <button class="btn btn-primary mt-2" onclick="ejercicio3()">Ejecutar Ejercicio 3</button>
+            </div>
+        </section>
+
+        <!-- EJERCICIO 4 -->
+        <section class="card shadow-sm mb-4">
+            <div class="card-header bg-primary text-white">
+                <h2 class="h5 mb-0">Ejercicio 4: Plantillas de cadena y error de const</h2>
+            </div>
+            <div class="card-body">
+                <p>Uso de plantillas con backticks (<code>` `</code>), concatenación tradicional y control de errores en constantes.</p>
+                
+                <h3 class="h6 text-secondary">Código ejecutado:</h3>
+                <pre class="bg-dark text-light p-3 rounded"><code>const nombre = "Reda ";
+const ciclo = "DAW";
+let horas = 10;
+horas += 5;
+const msg1 = `Hola, ${nombre}! Estás en el ciclo ${ciclo} y has trabajado ${horas} horas.`;
