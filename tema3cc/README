@@ -1,0 +1,47 @@
+# Tema 3: El lenguaje de programación de clientes - Variables, tipos y conversiones
+
+Cuaderno de laboratorio desarrollado para la asignatura de **Desarrollo Web en Entornos Cliente (DWEC)**. En esta práctica se han puesto en práctica los fundamentos de JavaScript: declaración de variables (`const` y `let`), operadores `typeof`, conversiones de tipos explícitas, coerción, plantillas de cadena y el manejo de errores en constantes.
+
+---
+
+## Capturas de pantalla
+
+### 1. Vista general de la página
+![Página Principal](capturas/captura_principal.png)
+*Descripción:* Vista general de la página web maquetada con Bootstrap, mostrando el nombre y apellidos del alumno en la barra de navegación, el título y las tarjetas correspondientes a cada ejercicio.
+
+### 2. Consola del Ejercicio 1
+![Consola Ejercicio 1](capturas/ejercicio1.png)
+*Descripción:* Resultados en la consola del navegador de las seis variables declaradas con sus respectivos tipos de datos utilizando `typeof`.
+
+### 3. Consola del Ejercicio 2
+![Consola Ejercicio 2](capturas/ejercicio2.png)
+*Descripción:* Ejecución de las conversiones explícitas utilizando `Number()`, `String()` y `Boolean()`, mostrando tanto el valor resultante como su `typeof`.
+
+### 4. Consola del Ejercicio 3
+![Consola Ejercicio 3](capturas/ejercicio3.png)
+*Descripción:* Pruebas de coerción de tipos mezclando cadenas y números, y comparaciones detalladas utilizando los operadores de igualdad estricta (`===`) y no estricta (`==`).
+
+### 5. Consola del Ejercicio 4
+![Consola Ejercicio 4](capturas/ejercicio4.png)
+*Descripción:* Generación de la ficha personal mediante plantillas de cadena (`backticks`) y concatenación tradicional, junto al error capturado en la consola al intentar reasignar un valor a una constante (`const`).
+
+---
+
+## Reflexión personal
+
+Realizar esta práctica me ha permitido comprender de forma más profunda cómo maneja JavaScript los tipos de datos en segundo plano. Las conversiones más intuitivas resultaron ser las de la función `String()`, ya que transformar cualquier dato a texto de forma explícita sigue una lógica muy directa. Por el contrario, lo que más me sorprendió fue el comportamiento de funciones como `Number("12abc")`, que en lugar de arrojar un error de sintaxis devuelve `NaN` (*Not-a-Number*), o el clásico error de diseño en JavaScript por el cual `typeof null` devuelve `"object"`. Asimismo, trabajar con coerción me ayudó a entender por qué es una buena práctica utilizar siempre la comparación estricta (`===`) para evitar fallos inesperados derivados de la conversión automática de tipos.
+
+---
+
+## Fuentes consultadas
+
+* [MDN Web Docs: Tipos de datos y gramática en JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript/Data_structures)
+* [MDN Web Docs: typeof](https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Operators/typeof)
+* [W3Schools: JavaScript Type Conversion](https://www.w3schools.com/js/js_type_conversion.asp)
+
+---
+
+## Uso de IA
+
+Para la elaboración de esta tarea se ha empleado una herramienta de Inteligencia Artificial como apoyo metodológico y de consulta para estructurar el código base de JavaScript (`app.js`), comprender el comportamiento exacto de la coerción de tipos y repasar la redacción de la reflexión personal. Todo el código resultante ha sido analizado, probado en el entorno local del navegador y adaptado de manera individual para cumplir con los requisitos específicos de la rúbrica.
