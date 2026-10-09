@@ -47,4 +47,4 @@ En navegadores actuales basados en Chromium (como Chrome o Edge), la cadena incl
 
 ## Uso de Inteligencia Artificial
 * **Herramienta utilizada**: Asistente de inteligencia artificial para la consulta de sintaxis de componentes Bootstrap y revisión estructural del código.
-* **Proceso posterior**: Todo el código generado fue probado, depurado y adaptado de forma manual en el entorno local mediante Live Server, redactando de manera propia los textos de análisis y reflexión exigidos en la rúbrica[cite: 8].
+* **Proceso posterior**: Todo el código generado fue probado, depurado y adaptado de forma manual en el entorno local mediante Live Server, redactando de manera propia los textos de análisis y reflexión exigidos en la rúbrica.
