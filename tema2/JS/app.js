@@ -14,8 +14,8 @@ function queNavegadorSoy() {
     let agente = navigator.userAgent;
     alert("UserAgent detectado: \n" + agente);
     console.warn("[WARN] Información de cliente obtenida mediante navigator.userAgent: " + agente);
+}function adios() {
+    alert("¡Adiós! Gracias por usar nuestra aplicación.");
+    console.log("[LOG] El usuario ha pulsado el botón 'Adiós'. Alerta mostrada correctamente.");
 }
-function Adios() {
-    alert("¡Hola! Soy Reda EL Qourchi, alumno de Desarrollo Web en Entornos Cliente.");
-    console.log("[LOG] El usuario ha pulsado el botón 'Saludar'. Alerta mostrada correctamente.");
-}
+
