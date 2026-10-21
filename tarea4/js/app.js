@@ -205,7 +205,7 @@ function bucleDoWhileTexto() {
     limpiarSalida();
     let contador = 0;
     let i = 1;
-    
+     
     do {
         anadirLinea(`do...while repetición ${i} de ${limite}`);
         contador++;

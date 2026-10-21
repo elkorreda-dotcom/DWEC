@@ -12,7 +12,7 @@ function mostrar(texto, color = "success") {
     let salida = document.getElementById("salida");
     // Muestra el texto en un aviso de Bootstrap borrando lo anterior
     salida.innerHTML = `<div class="alert alert-${color} mb-0" role="alert">${texto}</div>`;
-}
+} 
 
 function anadirLinea(texto) {
     let salida = document.getElementById("salida");
