@@ -1,6 +1,6 @@
 # Tarea 5: Manipular el DOM - DWEC
 
-- **Alumno:** [Tu Nombre y Apellidos]
+- **Alumno:** [Reda EL Qourchi]
 - **Curso:** 2º DAW - Desarrollo Web en Entornos Cliente
 
 ---
