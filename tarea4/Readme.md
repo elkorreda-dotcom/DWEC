@@ -1,39 +1,57 @@
-# DWEC - Tarea 4: Calculadora y Bucles
+# Tarea 5: Manipular el DOM - DWEC
 
-**Alumno:** Reda ELQourchi  
-**Curso Académico:** 2026/2027  
-**Módulo:** Desarrollo Web en Entorno Cliente (DWEC)  
-**Tutor/Profesor:** Profesorado DWEC  
-**Repositorio / Entrega:** Tarea Evaluable Tema 04  
+- **Alumno:** [Reda EL Qourchi]
+- **Curso:** 2º DAW - Desarrollo Web en Entornos Cliente
 
 ---
 
-## 1. Descripción del Proyecto
+## 1. Capturas de pantalla de los ejercicios
 
-El objetivo de este proyecto es construir una aplicación web interactiva utilizando **JavaScript (ES6+)** y **Bootstrap 5** para afianzar conceptos clave de desarrollo web en el entorno cliente:
+1. **Página recién cargada:**
+   ![Página inicial](capturas/captura1.png)
+   *Vista inicial de la aplicación con los datos del alumno cargados en la barra de navegación y el pie.*
 
-* **Captura e interpretación de datos** desde el DOM utilizando la librería de soporte `ayudas.js`.
-* **Operaciones aritméticas básicas y avanzadas** (suma, resta, multiplicación, división, potencia y módulo).
-* **Lógica condicional** para comparar valores numéricos y determinar la paridad de un número.
-* **Estructuras de control iterativas** (`for`, `while`, `do...while`) para la generación dinámica de contenido textual e interfaz basada en componentes visuales (*badges*).
-* **Registro de eventos en la consola del navegador (`F12`)** para facilitar la trazabilidad y depuración de la aplicación.
+2. **Ejercicios 1 y 2 aplicados:**
+   ![Ejercicios 1 y 2](capturas/captura2.png)
+   *Modificación de párrafos mediante selectores y creación/eliminación dinámica de nodos.*
+
+3. **Párrafo resaltado con el ratón:**
+   ![Resaltado ratón](capturas/captura3.png)
+   *Efecto `mouseenter` activo aplicando la clase de Bootstrap para el fondo gris.*
+
+4. **Prueba con innerHTML:**
+   ![Prueba innerHTML](capturas/captura4.png)
+   *Resultado al inyectar etiquetas HTML como `<b>hola</b>` utilizando `innerHTML`.*
+
+5. **Lista de tareas:**
+   ![Lista de tareas](capturas/captura5.png)
+   *Gestor de tareas interactivo con adición, contador actualizado y selección de elementos.*
+
+6. **Datos de la ventana (BOM) en modo móvil:**
+   ![Datos BOM móvil](capturas/captura6.png)
+   *Consulta de resolución, URL, idioma y punto de corte responsivo simulando un dispositivo móvil.*
 
 ---
 
-## 2. Estructura de Directorios
+## 2. Reflexión: textContent vs innerHTML
 
-La estructura de carpetas y archivos del repositorio está organizada de la siguiente manera:
+La principal diferencia radica en cómo interpretan el valor asignado:
+- **`textContent`** trata todo el contenido estrictamente como **texto plano**. Si escribes etiquetas HTML (como `<b>hola</b>`), las muestra literalmente en la pantalla escapando los caracteres especiales.
+- **`innerHTML`** analiza la cadena de texto como **código HTML**, interpretando e inyectando los elementos en el árbol del DOM.
 
-```text
-/
-├── index.html            # Interfaz de usuario estructurada con Bootstrap 5
-├── js/
-│   ├── ayudas.js         # Funciones auxiliares del DOM (no modificar)
-│   └── app.js            # Lógica principal y controladores de eventos
-├── img/
-│   ├── captura-01.png    # Captura 1: Operaciones aritméticas
-│   ├── captura-02.png    # Captura 2: Comparaciones y paridad
-│   ├── captura-03.png    # Captura 3: Bucles con texto
-│   ├── captura-04.png    # Captura 4: Bucles con badges
-│   └── captura-05.png    # Captura 5: Consola de desarrollador (F12)
-└── README.md             # Documentación completa del proyecto
+**¿Por qué nunca se debe meter en `innerHTML` lo que escribe el usuario?**
+Porque introduce una grave vulnerabilidad de seguridad conocida como **XSS (Cross-Site Scripting)**. Si un usuario introduce código malicioso en un input (por ejemplo, `<script>código malicioso</script>` o etiquetas con scripts incrustados en atributos `onerror`), `innerHTML` lo ejecutaría en el navegador de la víctima, pudiendo robar sesiones o manipular la página. Usando `textContent`, nos aseguramos de que cualquier entrada del usuario sea inocua al ser tratada siempre como texto.
+
+---
+
+## 3. Fuentes consultadas
+- [MDN Web Docs: Manipulación del DOM](https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model)
+- [MDN Web Docs: Element: classList](https://developer.mozilla.org/es/docs/Web/API/Element/classList)
+- Documentación oficial de Bootstrap 5 para clases de utilidad y componentes.
+
+---
+
+## 4. Uso de IA
+- **Herramienta utilizada:** Asistente de IA.
+- **Propósito:** Resolución de dudas puntuales sobre la sintaxis de los selectores avanzados de `querySelectorAll` combinados con estados de formularios (`:checked`).
+- **Validación posterior:** El código generado fue revisado, adaptado a los requisitos estrictos de la práctica (uso exclusivo de `const`/`let`, sin estilos inline y con logs en consola) y probado directamente en el entorno de desarrollo.
