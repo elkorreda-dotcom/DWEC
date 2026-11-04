@@ -15,7 +15,7 @@ function comoTexto(lista) {
 const estudiante = {
   nombre: "Reda",
   apellidos: "ElQourchi",
-  edad: 21,
+  edad: 19,
   curso: "2.º DAW",
   presentarse: function () {
     return "Soy " + this.nombre + " " + this.apellidos + ", tengo " + this.edad + " años y estudio " + this.curso + ".";
