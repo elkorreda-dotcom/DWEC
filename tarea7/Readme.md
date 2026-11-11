@@ -1,6 +1,4 @@
-Cambiado: ahora las capturas se llaman `Captura1.png` a `Captura5.png`, con C mayúscula. GitHub distingue mayúsculas y minúsculas, así que el nombre tiene que coincidir exactamente con el de tus archivos.
 
-```markdown
 # Tarea 7 · Funciones, flechas y clases
 
 Reda ElQourchi · DWEC 26/27
