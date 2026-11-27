@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Cambia [Tu nombre] por tu nombre -->
+  <title>Inscripción · [Tu nombre]</title>
+
+  <!-- CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Iconos de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
+  <!-- Tu JavaScript. Con defer, espera a que se lea todo el HTML antes de ejecutarse: no lo quites -->
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+
+  <!--
+    PLANTILLA DE LA TAREA 8
+    · Esta vez el formulario lo maquetas tú: aquí solo tienes el primer campo, «nombre», como modelo.
+    · Todos los campos siguen el mismo esquema:
+        <div class="mb-3">                                  ← un div por campo
+          <label for="ID" class="form-label">…</label>      ← for = el id del campo
+          <input … id="ID" name="NOMBRE" class="form-control">
+          <div class="invalid-feedback"></div>              ← aquí escribirá app.js el error
+        </div>
+    · Los id que usa el JavaScript están en el enunciado: respétalos.
+    · Todo lo que va entre [corchetes] es un hueco: sustitúyelo por lo tuyo.
+  -->
+
+  <!-- NAVBAR con tu nombre -->
+  <nav class="navbar bg-primary" data-bs-theme="dark">
+    <div class="container">
+      <span class="navbar-brand"><i class="bi bi-person-circle"></i> [Tu nombre y apellidos]</span>
+      <span class="navbar-text">Tarea 8 · DWEC</span>
+    </div>
+  </nav>
+
+  <!-- CABECERA -->
+  <header class="bg-body-tertiary border-bottom py-4 mb-4">
+    <div class="container">
+      <h1 class="h2 mb-1">Jornadas de Desarrollo Web 2026</h1>
+      <p class="lead mb-0 text-body-secondary">Formulario de inscripción. Los campos con * son obligatorios.</p>
+    </div>
+  </header>
+
+  <main class="container mb-5">
+    <div class="row g-4">
+
+      <!-- EL FORMULARIO -->
+      <div class="col-12 col-lg-7">
+        <section class="card shadow-sm">
+          <div class="card-body">
+            <form id="inscripcion" action="recibido.html" method="get">
+
+              <fieldset class="mb-4">
+                <legend class="fs-5 border-bottom pb-1">Tus datos</legend>
+
+                <!-- EL MODELO: un campo completo, con sus atributos de validación (ejercicio 2) -->
+                <div class="mb-3">
+                  <label for="nombre" class="form-label">Nombre y apellidos *</label>
+                  <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="name"
+                         required minlength="3" maxlength="60" pattern="[A-Za-zÁÉÍÓÚÜáéíóúüÑñ\- ]+"
+                         title="Solo letras, espacios y guiones.">
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <!-- TODO: correo (email), «Repite el correo» (email2, SIN name), teléfono (telefono)
+                           y fecha de nacimiento (nacimiento). Dos por fila con la rejilla de Bootstrap. -->
+
+              </fieldset>
+
+              <!-- TODO: un segundo <fieldset> «Tu inscripción» con la modalidad (select), el taller (tres radio
+                         con el mismo name), el nivel de JavaScript (range con su <output>), los comentarios
+                         (textarea con su contador) y la casilla de las condiciones. -->
+
+              <!-- TODO: los botones «Enviar inscripción» (submit) y «Borrar» (reset). -->
+
+            </form>
+          </div>
+        </section>
+      </div>
+
+      <!-- TODO (ejercicio 6): una tarjeta «Resumen antes de enviar» con el botón #verResumen,
+                                el párrafo #avisoResumen y la lista #resumen. -->
+
+    </div>
+  </main>
+
+  <footer class="bg-body-tertiary border-top py-3">
+    <div class="container small text-body-secondary">
+      [Tu nombre y apellidos] · DWEC 26/27 · Tarea 8 · Las capturas, la reflexión y las fuentes están en el README.
+    </div>
+  </footer>
+
+  <!-- JS de Bootstrap -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
