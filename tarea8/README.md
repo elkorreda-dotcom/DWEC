@@ -21,7 +21,7 @@ Sin `novalidate`, escribí `Reda1126` en el nombre y el navegador no deja enviar
 ### c) Ejercicio 3: lo que llega por GET
 
 <img src="Captura/Captura3.png" alt="recibido.html con los datos en la URL y en una tabla" width="600">
-
+//
 Con GET, todos los datos viajan en la URL después del `?`, como pares `name=valor` separados por `&`. Los espacios se ven como `+` y la `@` como `%40`. «Repite el correo» no llega porque no tiene `name`. Nunca mandaría una contraseña por GET, porque quedaría a la vista en la barra, en el historial y en los registros del servidor.
 
 ### d) Ejercicio 4: los errores, junto a cada campo
