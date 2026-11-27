@@ -3,35 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- Cambia [Tu nombre] por tu nombre -->
-  <title>Inscripción · [Tu nombre]</title>
+  <title>Inscripción · Reda EL Qourchi</title>
 
   <!-- CSS de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
   <!-- Iconos de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css" rel="stylesheet">
-  <!-- Tu JavaScript. Con defer, espera a que se lea todo el HTML antes de ejecutarse: no lo quites -->
+  <!-- JavaScript con defer: se ejecuta cuando ya se ha leído todo el HTML -->
   <script src="js/app.js" defer></script>
 </head>
 <body>
 
-  <!--
-    PLANTILLA DE LA TAREA 8
-    · Esta vez el formulario lo maquetas tú: aquí solo tienes el primer campo, «nombre», como modelo.
-    · Todos los campos siguen el mismo esquema:
-        <div class="mb-3">                                  ← un div por campo
-          <label for="ID" class="form-label">…</label>      ← for = el id del campo
-          <input … id="ID" name="NOMBRE" class="form-control">
-          <div class="invalid-feedback"></div>              ← aquí escribirá app.js el error
-        </div>
-    · Los id que usa el JavaScript están en el enunciado: respétalos.
-    · Todo lo que va entre [corchetes] es un hueco: sustitúyelo por lo tuyo.
-  -->
-
-  <!-- NAVBAR con tu nombre -->
+  <!-- NAVBAR con mi nombre -->
   <nav class="navbar bg-primary" data-bs-theme="dark">
     <div class="container">
-      <span class="navbar-brand"><i class="bi bi-person-circle"></i> [Tu nombre y apellidos]</span>
+      <span class="navbar-brand"><i class="bi bi-person-circle"></i> Reda EL Qourchi</span>
       <span class="navbar-text">Tarea 8 · DWEC</span>
     </div>
   </nav>
@@ -53,10 +39,11 @@
           <div class="card-body">
             <form id="inscripcion" action="recibido.html" method="get">
 
+              <!-- ========== FIELDSET 1: TUS DATOS ========== -->
               <fieldset class="mb-4">
                 <legend class="fs-5 border-bottom pb-1">Tus datos</legend>
 
-                <!-- EL MODELO: un campo completo, con sus atributos de validación (ejercicio 2) -->
+                <!-- Nombre (el modelo de la plantilla) -->
                 <div class="mb-3">
                   <label for="nombre" class="form-label">Nombre y apellidos *</label>
                   <input type="text" id="nombre" name="nombre" class="form-control" autocomplete="name"
@@ -65,31 +52,123 @@
                   <div class="invalid-feedback"></div>
                 </div>
 
-                <!-- TODO: correo (email), «Repite el correo» (email2, SIN name), teléfono (telefono)
-                           y fecha de nacimiento (nacimiento). Dos por fila con la rejilla de Bootstrap. -->
+                <!-- Fila 1: los dos correos -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="email" class="form-label">Correo electrónico *</label>
+                    <input type="email" id="email" name="email" class="form-control" autocomplete="email">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="email2" class="form-label">Repite el correo *</label>
+                    <!-- Sin name: no se envía, solo sirve para comprobar que coinciden -->
+                    <input type="email" id="email2" class="form-control" autocomplete="email">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
 
+                <!-- Fila 2: teléfono y fecha de nacimiento -->
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="telefono" class="form-label">Teléfono (opcional)</label>
+                    <input type="tel" id="telefono" name="telefono" class="form-control" autocomplete="tel">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="nacimiento" class="form-label">Fecha de nacimiento *</label>
+                    <input type="date" id="nacimiento" name="nacimiento" class="form-control" autocomplete="bday">
+                    <div class="invalid-feedback"></div>
+                  </div>
+                </div>
               </fieldset>
 
-              <!-- TODO: un segundo <fieldset> «Tu inscripción» con la modalidad (select), el taller (tres radio
-                         con el mismo name), el nivel de JavaScript (range con su <output>), los comentarios
-                         (textarea con su contador) y la casilla de las condiciones. -->
+              <!-- ========== FIELDSET 2: TU INSCRIPCIÓN ========== -->
+              <fieldset class="mb-4">
+                <legend class="fs-5 border-bottom pb-1">Tu inscripción</legend>
 
-              <!-- TODO: los botones «Enviar inscripción» (submit) y «Borrar» (reset). -->
+                <!-- Modalidad: la primera opción vacía cuenta como "sin elegir" -->
+                <div class="mb-3">
+                  <label for="modalidad" class="form-label">Modalidad *</label>
+                  <select id="modalidad" name="modalidad" class="form-select">
+                    <option value="">Elige una modalidad</option>
+                    <option value="presencial">Presencial, en el salón de actos</option>
+                    <option value="online">Online, en directo</option>
+                  </select>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <!-- Taller: tres radio con el mismo name (un solo valor) y un id distinto cada uno -->
+                <div class="mb-3">
+                  <p class="form-label mb-1">Taller de la tarde *</p>
+                  <div class="form-check">
+                    <input type="radio" id="tallerHtml" name="taller" value="html" class="form-check-input">
+                    <label for="tallerHtml" class="form-check-label">HTML accesible</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="tallerJs" name="taller" value="javascript" class="form-check-input">
+                    <label for="tallerJs" class="form-check-label">JavaScript moderno</label>
+                  </div>
+                  <div class="form-check">
+                    <input type="radio" id="tallerBootstrap" name="taller" value="bootstrap" class="form-check-input">
+                    <label for="tallerBootstrap" class="form-check-label">Bootstrap a fondo</label>
+                  </div>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <!-- Nivel: range de 1 a 10 que empieza en 5; el output enseña el valor -->
+                <div class="mb-3">
+                  <label for="nivel" class="form-label">
+                    Tu nivel de JavaScript: <output id="valorNivel" for="nivel" class="fw-bold">5</output> de 10
+                  </label>
+                  <input type="range" id="nivel" name="nivel" class="form-range" min="1" max="10" value="5">
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <!-- Comentarios con su contador -->
+                <div class="mb-3">
+                  <label for="comentarios" class="form-label">¿Algo que debamos saber?</label>
+                  <textarea id="comentarios" name="comentarios" class="form-control" rows="3"></textarea>
+                  <div class="form-text"><span id="contador">0</span> de 200 caracteres</div>
+                  <div class="invalid-feedback"></div>
+                </div>
+
+                <!-- Condiciones: solo se envía si está marcada, con el valor "si" -->
+                <div class="mb-3 form-check">
+                  <input type="checkbox" id="condiciones" name="condiciones" value="si" class="form-check-input">
+                  <label for="condiciones" class="form-check-label">Acepto las condiciones de las jornadas *</label>
+                  <div class="invalid-feedback"></div>
+                </div>
+              </fieldset>
+
+              <!-- Botones, cada uno con su type -->
+              <button type="submit" class="btn btn-primary"><i class="bi bi-send"></i> Enviar inscripción</button>
+              <button type="reset" class="btn btn-outline-secondary"><i class="bi bi-eraser"></i> Borrar</button>
 
             </form>
           </div>
         </section>
       </div>
 
-      <!-- TODO (ejercicio 6): una tarjeta «Resumen antes de enviar» con el botón #verResumen,
-                                el párrafo #avisoResumen y la lista #resumen. -->
+      <!-- RESUMEN CON FORMDATA (ejercicio 6) -->
+      <div class="col-12 col-lg-5">
+        <aside class="card shadow-sm">
+          <div class="card-header"><i class="bi bi-list-ul"></i> Resumen antes de enviar</div>
+          <div class="card-body">
+            <p class="small text-body-secondary">Lo que el formulario enviaría ahora mismo, sacado con <code>new FormData(form)</code>.</p>
+            <!-- type="button": si no, al pulsarlo haría submit -->
+            <button type="button" id="verResumen" class="btn btn-sm btn-outline-primary mb-3"><i class="bi bi-eye"></i> Ver resumen</button>
+            <p id="avisoResumen" class="small"></p>
+            <ul id="resumen" class="list-group"></ul>
+          </div>
+        </aside>
+      </div>
 
     </div>
   </main>
 
   <footer class="bg-body-tertiary border-top py-3">
     <div class="container small text-body-secondary">
-      [Tu nombre y apellidos] · DWEC 26/27 · Tarea 8 · Las capturas, la reflexión y las fuentes están en el README.
+      Reda EL Qourchi · DWEC 26/27 · Tarea 8 · Las capturas, la reflexión y las fuentes están en el README.
     </div>
   </footer>
 
