@@ -50,4 +50,4 @@ Validando con JavaScript decido yo cómo y dónde se ven los errores: todos a la
 
 ## Uso de IA
 
-He usado Claude (Anthropic) para orientarme con Git y VS Code, para que me explicara el enunciado y para generar parte del código del formulario y de `app.js`. Después lo he probado en el navegador con la consola abierta, he hecho yo las capturas y he repasado cada parte para entender lo que hace.
+He usado Claude (Anthropic) para orientarme con Git y VS Code, para que me explicara el enunciado y para generar parte del código del formulario y de `app.js`. Después lo he probado en el navegadore con la consola abierta, he hecho yo las capturas y he repasado cada parte para entender lo que hace.
